@@ -14,10 +14,10 @@ public class Dog {
         this.name = name;
     }
 
-    public Dog(int catAge, String catName, String catColor){
-        this.age = catAge;
-        this.name = catName;
-        this.color = catColor;
+    public Dog(int dogAge, String dogName, String dogColor){
+        this.age = dogAge;
+        this.name = dogName;
+        this.color = dogColor;
     }
 
     public Dog() {
