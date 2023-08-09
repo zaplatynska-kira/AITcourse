@@ -19,12 +19,12 @@ public class HW1501 {
 
         System.out.println("===================");
 
-        Dog dog3 = new Dog(5, "Boris", "red");
+        Dog dog3 = new Dog(5, "Luna", "white");
 
         dog3.sleep();
-        System.out.println("Cat name: " + dog3.name);
-        System.out.println("Cat age: " + dog3.age);
-        System.out.println("Cat color: " + dog3.color);
+        System.out.println("Dog name: " + dog3.name);
+        System.out.println("Dog age: " + dog3.age);
+        System.out.println("Dog color: " + dog3.color);
 
 
     }
