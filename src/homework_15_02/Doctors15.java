@@ -1,7 +1,5 @@
 package homework_15_02;
 
-import homework1501.Student;
-
 public class Doctors15 {
     public static void main(String[] args) {
         Doctors doctors = new Doctors(45,"Vatson","pediatrics" );

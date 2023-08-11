@@ -1,6 +1,4 @@
-package homework1501;
-
-import homework_15.Dog;
+package homework15_01;
 
 public class Student15 {
     public static void main(String[] args) {
