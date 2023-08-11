@@ -18,23 +18,20 @@ public class Dog {
     }
 
     public void setJumpHeight(int jumpHeight) {
-        if (jumpHeight < 0) ;
-        this.jumpHeight = 0;
-        this.jumpHeight = jumpHeight;
-    }
+        if (jumpHeight < 0) {
+            this.jumpHeight = 0;
+        } else {
+            this.jumpHeight = jumpHeight;
 
-    void whoAmI() {
-        System.out.println("Я собака " + name + ", и я умею прыгать на " + jumpHeight + " см");
-    }
 
-    void jump() {
-        System.out.println("Я прыгаю!");
-    }
 
-    void jump(int height) {
-        System.out.println("Я прыгаю на высоту " + height + " см");
+        }
     }
-
 }
+
+
+
+
+
 
 
