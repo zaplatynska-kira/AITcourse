@@ -1,4 +1,4 @@
-package homework_20_1;
+package homework_20;
 
 
 public class MainDog1 {
