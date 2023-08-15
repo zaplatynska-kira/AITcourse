@@ -1,4 +1,4 @@
-package Lesson_06_if;
+package lesson_06_if;
 
 import java.util.Random;
 import java.util.Scanner;
