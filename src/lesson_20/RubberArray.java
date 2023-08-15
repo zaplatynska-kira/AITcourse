@@ -1,12 +1,15 @@
-package Lesson_19;
+package lesson_20;
 
 import java.util.Arrays;
 
 public class RubberArray {
     private int[] array;
+    int cursor;
+    static final int MULTIPLIER = 2;
 
     public RubberArray() { // конструктор
-        this.array = new int[0];
+        this.array = new int[10];
+        cursor = 0;
     }
 
 //    public RubberArray(int[] arr) { // ПРОБЛЕМА! отдаем ссылку! значения в массиве класса могут быть изменены без нашего контроля(ведома)
@@ -31,8 +34,12 @@ public class RubberArray {
 
 
     public void add(int value) { //добавление 1 элемента
-        extractArray();
-        array[array.length - 1] = value;
+        if (isArrayFull()) {
+            extractArray();
+        }
+        array[cursor] = value;
+        cursor++;
+        System.out.println("Добавлен элемент " + value);
     }
 
     public void add(int... ints) { // принимает произвольное количество аргументов типа int
@@ -41,12 +48,29 @@ public class RubberArray {
         }
     }
 
+    private boolean isArrayFull() {
+        return cursor == array.length - 1;
+    }
+
 
     private void extractArray() { // расширение массива на 1 ячейку
-        array = Arrays.copyOf(array, array.length + 1);
+        System.out.println("Расширяем внутренний массив!");
+        array = Arrays.copyOf(array, array.length * MULTIPLIER);
     }
 
     public void printArray() { // вывести в консоль массив
+        System.out.print("[");
+        for (int i = 0; i < cursor; i++) {
+            System.out.print(array[i]);
+            if (i < cursor - 1) {
+                System.out.print("; ");
+            }
+        }
+        System.out.println("]");
+        System.out.println();
+    }
+
+    public void printFullArray() { // вывести в консоль массив
         System.out.print("[");
         for (int i = 0; i < array.length; i++) {
             System.out.print(array[i]);
@@ -59,9 +83,14 @@ public class RubberArray {
     }
 
     public int size() { // количество элементов в массиве
+        return cursor;
+    }
+
+    public int length() {
         return array.length;
     }
 
+    //TODO
     public int sumOfValues() { //сумма значений в массиве
         int sum = 0;
         for (int value : array) {
@@ -70,6 +99,7 @@ public class RubberArray {
         return sum;
     }
 
+    //TODO переписать
     public int min() { // возвращаем мин значение из массива
         if (array.length == 0) return Integer.MIN_VALUE;
 
@@ -82,6 +112,7 @@ public class RubberArray {
         return min;
     }
 
+    //TODO переписать
     public int max() { // возвращаем максимальное значение из массива
         if (array.length == 0) return Integer.MAX_VALUE;
 
@@ -95,9 +126,9 @@ public class RubberArray {
     }
 
     public int[] toArray() { // нужно создать КОПИЮ нашего массива и ее вернуть
-        int[] result = new int[array.length];
+        int[] result = new int[cursor];
 
-        for (int i = 0; i < result.length; i++) {
+        for (int i = 0; i < cursor; i++) {
             result[i] = array[i];
         }
 
@@ -105,26 +136,27 @@ public class RubberArray {
         // return Arrays.copyOf(array, array.length);
     }
 
+
     public void deleteByIndex(int index) {
-        if (array.length >= 1 && index >= 0 && index < array.length) {
+        if (cursor >= 1 && index >= 0 && index < cursor) {
 
-            int[] result = new int[array.length - 1];
+//            int[] result = new int[array.length - 1];
 
-            for (int i = 0; i < result.length; i++) {
+            for (int i = 0; i < cursor; i++) {
 
                 if (i < index) {
-                    result[i] = array[i];
+                    array[i] = array[i];
                 } else { // if (i >= index) {
-                    result[i] = array[i + 1];
+                    array[i] = array[i + 1];
                 }
             }
 //            System.out.println("Result " + Arrays.toString(result));
-            array = result;
+            cursor--;
         }
     }
 
     public int searchByValue(int value) { //Поиск элемента по значению. Возвращаем индекс
-        for (int i = 0; i < array.length; i++) {
+        for (int i = 0; i < cursor; i++) {
             if (array[i] == value) return i;
         }
         return -1;
@@ -166,10 +198,8 @@ public class RubberArray {
     }
 
     private boolean isIndexIncorrect(int index) {
-        return !(index >= 0 && index < array.length);
+        return !(index >= 0 && index < cursor);
     }
-
-
 
 
 }
@@ -198,6 +228,7 @@ public class RubberArray {
 - среднее значение ???
 - распечатать в обратной последовательности -> ???
 - удалить элемент по значению
+/*
 
  */
 
