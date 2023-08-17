@@ -29,7 +29,7 @@ public class Client {
     }
 
     public int givDiscount(){
-        System.out.println("Уважаемый клиент   " + name + " сегодня скидки нет");
+        System.out.println(" Client   " + name + "id:   " + id);
         return 0;
 }
 
