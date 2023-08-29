@@ -3,7 +3,7 @@ package homework_31;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class HW_30 {
+public class HW_31 {
     public static void main(String[] args) {
         String string1 = "Hello World";
         String string2 = "l";
