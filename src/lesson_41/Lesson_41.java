@@ -1,10 +1,9 @@
 package lesson_41;
-
+import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
-
-public class HashMap {
-    /*
+public class Lesson_41 {
+  /*
      Интерфейс Map
       4 класса :
       Hashtable
@@ -18,16 +17,16 @@ public class HashMap {
      */
 
     public static void main(String[] args) {
-        Map<Integer,String> ourMap = new HashMap<>();
-        ourMap.put(1200,"Notebook");
-        ourMap.put(10,"Mouse");
-        ourMap.put(500,"TV");
-        ourMap.put(130,"Printer");
+        Map<Integer, String> ourMap = new HashMap<>();
+        ourMap.put(1200, "Notebook");
+        ourMap.put(10, "Mouse");
+        ourMap.put(500, "TV");
+        ourMap.put(130, "Printer");
 
         System.out.println(ourMap);
 
         // добавить элт put
-        ourMap.put(10,"Clock");
+        ourMap.put(10, "Clock");
 
         System.out.println(ourMap);
 
@@ -52,7 +51,5 @@ public class HashMap {
         System.out.println(ourMap.keySet());
 
         Set<Integer> mapKeySet = ourMap.keySet();
-
-
     }
 }
