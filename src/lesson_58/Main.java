@@ -1,5 +1,7 @@
 package lesson_58;
 
+import java.util.function.*;
+
 public class Main {
     /*
     Используя наши интерфейсы написать такие лямбда- выражения:
@@ -25,7 +27,7 @@ public class Main {
         String result = concatable.concat(1,2);
         System.out.println(result);
 
-        BiFunction<Integer,Integer,String> biFunction = (a,b) ->Integer.toString(a) + b;
+        BiFunction<Integer,Integer,String> biFunction = (a, b) ->Integer.toString(a) + b;
         System.out.println(biFunction.apply(3,4));
 
         /*
@@ -36,7 +38,7 @@ public class Main {
         System.out.println(checkable.check("abc"));// true
         System.out.println(checkable.check("abcd"));// false
 
-        Predicate<String> predicate =str -> str.length() == 3;
+        Predicate<String> predicate = str -> str.length() == 3;
         System.out.println("predicate");
         System.out.println(predicate.test("abc"));
         System.out.println(predicate.test("abcd"));
